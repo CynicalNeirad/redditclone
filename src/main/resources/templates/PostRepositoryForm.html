@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<form action = "#"
+      th:action="@{/process}"
+      th:object="${post}"
+      method="post">
+    <input type="hidden" th:field="*{id}" />
+    Title :<input type="text" th:field= "*{title}" />
+    <span th:if="${#fields.hasErrors('title')}"
+          th:errors="*{title}"></span><br/>
+    User  :<input type="text" th:field="*{user}" />
+    <span th:if="${#fields.hasErrors('user')}"
+          th:errors="*{user}"></span><br/>
+    Url :<input type="text" th:field= "*{url}" />
+    <span th:if="${#fields.hasErrors('url')}"
+          th:errors="*{url}"></span><br/>
+    <br />
+    <input type="submit" values="Submit" />
+</form>
+</body>
+</html>
