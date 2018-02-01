@@ -6,19 +6,19 @@
 </head>
 <body>
 <a href="/add">Make a Post</a><br />
-<table>
+<table border="1">
     <tr>
         <th>Title</th>
         <th>User</th>
-        <th>Url</th>
+        <th>Date</th>
     </tr>
     <tr th:each="post : ${post}">
-        <td th:text="${post.title}"></td>
+        <td>        <a th:href="${post.url}" target="_blank"> <span th:text="${post.title}" ></span> </a>
+        </td>
         <td th:text="${post.user}"></td>
-        <td th:text="${post.url}"></td>
         <td>
-            <a th:href="@{/update/{id}(id=${people.id})}">Update</a>
-            <a th:href="@{/delete/{id}(id=${people.id})}">Delete</a>
+            <a th:href="@{/update/{id}(id=${post.id})}">Update</a>
+            <a th:href="@{/delete/{id}(id=${post.id})}">Delete</a>
         </td>
     </tr>
 </table>

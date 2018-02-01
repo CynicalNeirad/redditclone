@@ -16,11 +16,12 @@
     User  :<input type="text" th:field="*{user}" />
     <span th:if="${#fields.hasErrors('user')}"
           th:errors="*{user}"></span><br/>
-    Url :<input type="text" th:field= "*{url}" />
+    Url :<input type="url" th:field= "*{url}" />
     <span th:if="${#fields.hasErrors('url')}"
           th:errors="*{url}"></span><br/>
+    new
     <br />
-    <input type="submit" values="Submit" />
+    <input type="submit" values="Submit" th:hrep="@{/process}" />
 </form>
 </body>
 </html>

@@ -19,6 +19,11 @@ public class Post {
     @NotEmpty
     private String url;
 
+    @NotEmpty
+    private String user;
+
+    private String date;
+
 
     public long getId() {
         return id;
@@ -42,5 +47,21 @@ public class Post {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
